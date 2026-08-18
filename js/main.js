@@ -89,6 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="play-overlay-btn" onclick="playSongById(${song.id})" title="تشغيل / إيقاف">
             <i class="${isSongPlaying ? 'ri-pause-fill' : 'ri-play-fill'}"></i>
           </div>
+          <div class="card-equalizer ${isSongPlaying ? 'active' : ''}">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
         </div>
         <div class="song-details">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
@@ -179,19 +185,32 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mainPlayIcon) {
       mainPlayIcon.className = isPlaying ? 'ri-pause-fill' : 'ri-play-fill';
     }
+
+    // تحديث موجات المشغل السفلي
+    const playerEqualizer = document.getElementById('playerEqualizer');
+    if (playerEqualizer) {
+      if (isPlaying) {
+        playerEqualizer.classList.add('active');
+      } else {
+        playerEqualizer.classList.remove('active');
+      }
+    }
     
-    // تحديث الأزرار داخل كل بطاقة
+    // تحديث الأزرار والموجات داخل كل بطاقة
     const cards = document.querySelectorAll('.song-card');
     cards.forEach(card => {
       const cardId = parseInt(card.getAttribute('data-id'), 10);
       const icon = card.querySelector('.play-overlay-btn i');
+      const eq = card.querySelector('.card-equalizer');
       if (icon) {
         if (cardId === currentPlayingSongId && isPlaying) {
           icon.className = 'ri-pause-fill';
           card.classList.add('playing');
+          if (eq) eq.classList.add('active');
         } else {
           icon.className = 'ri-play-fill';
           card.classList.remove('playing');
+          if (eq) eq.classList.remove('active');
         }
       }
     });
