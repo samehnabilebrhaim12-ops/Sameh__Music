@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تصميم الأغاني بالاسم | الفنان سامح نبيل - Sameh Nabil</title>
+  <meta name="description" content="موقع تصميم الأغاني بالاسم للفنان سامح نبيل - أغنية خاصة بك بكلمات من اختيارك وألحان تُعبر عن إحساسك لمختلف المناسبات وأعياد الميلاد والأفراح والنجاح.">
+  
+  <!-- Favicon / Browser Tab Icon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  
+  <!-- Remixicon for sleek modern icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">
+          <i class="ri-mic-line"></i>
+        </div>
+        <div class="brand-text">
+          سامح نبيل <span>| تصميم الأغاني</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero" class="active">الرئيسية</a></li>
+        <li><a href="#occasions">المناسبات</a></li>
+        <li><a href="#features">مميزاتنا</a></li>
+        <li><a href="#showcase">نماذج الأغاني</a></li>
+        <li><a href="#orderSection">اطلب الآن</a></li>
+        <li><a href="#contact">التواصل</a></li>
+      </ul>
+
+      <a href="#orderSection" class="btn-primary">
+        <i class="ri-whatsapp-line"></i> اطلب أغنيتك
+      </a>
+
+      <button class="mobile-toggle" aria-label="Toggle Menu">
+        <i class="ri-menu-3-line"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="ri-music-2-fill"></i> من خدماتنا الاحترافية
+        </div>
+        <h1 class="hero-title">
+          تصميم الأغاني <br>
+          <span class="gradient-text">بالاسم والمناسبة</span>
+        </h1>
+        <p class="hero-subtitle">
+          أغنية خاصة بك... بكلمات من اختيارك وألحان تُعبر عن إحساسك 💖
+        </p>
+
+        <div class="hero-cta">
+          <a href="#orderSection" class="btn-primary">
+            <i class="ri-magic-line"></i> صمم أغنيتك الآن
+          </a>
+          <a href="#showcase" class="btn-secondary">
+            <i class="ri-play-circle-line"></i> استمع للعيّنات
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>+500</h3>
+            <p>أغنية مخصصة بالاسم</p>
+          </div>
+          <div class="stat-item">
+            <h3>100%</h3>
+            <p>كلمات وألحان حصرية</p>
+          </div>
+          <div class="stat-item">
+            <h3>MP3</h3>
+            <p>تسليم سريع بجودة عالية</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-frame">
+          <img src="assets/images/hero_mic.jpg" alt="استوديو تصميم الأغاني - سامح نبيل">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Occasions Section -->
+  <section id="occasions" class="occasions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">لكل لحظة مميزة</span>
+        <h2 class="section-title">مناسبات نصمم لها أغنيتك</h2>
+        <p class="section-subtitle">مهما كانت مناسبتك السعيدة، نقوم بتجسيد مشاعرك في أغنية احترافية تبقى ذكرى خالدة</p>
+      </div>
+
+      <div class="occasions-grid">
+        <div class="occasion-card" onclick="fillOrderForm('', 'المناسبات الخاصة')">
+          <div class="occasion-icon"><i class="ri-sparkles-line"></i></div>
+          <h3 class="occasion-title">المناسبات الخاصة</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">لحظاتك اللطيفة والذكريات الاستثنائية</p>
+        </div>
+
+        <div class="occasion-card" onclick="fillOrderForm('', 'أعياد الميلاد والمناسبات')">
+          <div class="occasion-icon"><i class="ri-cake-3-line"></i></div>
+          <h3 class="occasion-title">أعياد الميلاد</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">فرحة العمر وأجمل تهنئة باسم صاحب التورتة</p>
+        </div>
+
+        <div class="occasion-card" onclick="fillOrderForm('', 'الأفراح والخطوبة')">
+          <div class="occasion-icon"><i class="ri-heart-pulse-line"></i></div>
+          <h3 class="occasion-title">الأفراح والخطوبة</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">أغنية زفاف ودخلة العرسان تعبر عن الحب والبهجة</p>
+        </div>
+
+        <div class="occasion-card" onclick="fillOrderForm('', 'الإهداءات والمفاجآت')">
+          <div class="occasion-icon"><i class="ri-gift-line"></i></div>
+          <h3 class="occasion-title">الإهداءات والمفاجآت</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">هدية مختلفة تمس القلب وغير متوقعة</p>
+        </div>
+
+        <div class="occasion-card" onclick="fillOrderForm('', 'التخرج والنجاح')">
+          <div class="occasion-icon"><i class="ri-graduation-cap-line"></i></div>
+          <h3 class="occasion-title">التخرج والنجاح</h3>
+          <p style="font-size: 13px; color: var(--text-muted);">فخر الوصول واحتفال بجهد السنين</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">لماذا تختارنا؟</span>
+        <h2 class="section-title">مميزات خدمتنا</h2>
+        <p class="section-subtitle">نضمن لك الحصول على أغنية استوديو عالية الجودة تليق بك وبمن تحب</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-badge-icon"><i class="ri-music-line"></i></div>
+          <div class="feature-info">
+            <h4>نسخة جاهزة MP3</h4>
+            <p>تسليم ملف صوتی عالي الدقة جاهز للتشغيل والمشاركة على جميع الأجهزة ووسائل التواصل.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-badge-icon"><i class="ri-timer-flash-line"></i></div>
+          <div class="feature-info">
+            <h4>تسليم سريع وبجودة عالية</h4>
+            <p>التزام تام بالمواعيد وتسليم العمل في وقت قياسي دون المساومة على جودة الصوت والتوزيع.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-badge-icon"><i class="ri-equalizer-line"></i></div>
+          <div class="feature-info">
+            <h4>توزيع موسيقي عالي الجودة</h4>
+            <p>هندسة صوتية وتوزيع موسيقية احترافية بأحدث التقنيات لضمان وضوح ونقاء كل آلة.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-badge-icon"><i class="ri-user-voice-line"></i></div>
+          <div class="feature-info">
+            <h4>أداء احترافي بأجمل الأصوات</h4>
+            <p>أداء غنائي عذب وإحساس عالي يضمن إيصال المشاعر بصدق وروعة.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-badge-icon"><i class="ri-quill-pen-line"></i></div>
+          <div class="feature-info">
+            <h4>كلمات وألحان حصرية</h4>
+            <p>صياغة كلمات مخصصة 100% باسم الشخص ولحن مميز يُكتب ويُلحن لأجله فقط.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase & Interactive Audio Player Section -->
+  <section id="showcase" class="showcase">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">استمع لـ أعمالنا</span>
+        <h2 class="section-title">معرض الأغاني والعيّنات الاستعراضية</h2>
+        <p class="section-subtitle">اختر الفئة واستمع لنماذج من الأغاني التي قمنا بتصميمها سابقاً بالأسماء</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="category-tabs">
+        <button class="tab-btn active" data-category="all">الكل</button>
+        <button class="tab-btn" data-category="birthdays">أعياد الميلاد</button>
+        <button class="tab-btn" data-category="weddings">الأفراح والخطوبة</button>
+        <button class="tab-btn" data-category="graduation">التخرج والنجاح</button>
+        <button class="tab-btn" data-category="gifts">الإهداءات والمفاجآت</button>
+        <button class="tab-btn" data-category="special">المناسبات الخاصة</button>
+      </div>
+
+      <!-- Songs Dynamic Grid -->
+      <div id="songsGrid" class="songs-grid">
+        <!-- JS renders song cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Direct WhatsApp Order Section -->
+  <section id="orderSection" class="order-section">
+    <div class="container">
+      <div class="order-box">
+        <div style="text-align: center;">
+          <span class="section-tag">اطلب الآن سهلة ومباشرة</span>
+          <h2 class="section-title">صمم أغنيتك الخاصة بـ اسمك بصوت الفنان سامح نبيل</h2>
+          <p style="color: var(--text-muted); font-size: 18px; margin-top: 10px;">
+            أرسل لنا الاسم + المناسبة + فكرتك وسيب الباقي علينا ✨
+          </p>
+        </div>
+
+        <form id="whatsappForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="senderName"><i class="ri-user-3-line"></i> اسمك (صاحب الطلب):</label>
+              <input type="text" id="senderName" placeholder="أدخل اسمك الكريم" required>
+            </div>
+
+            <div class="form-group">
+              <label for="recipientName"><i class="ri-heart-line"></i> اسم الشخص (صاحب الأغنية):</label>
+              <input type="text" id="recipientName" placeholder="مثال: مريم، عمر، نورا وأحمد..." required>
+            </div>
+
+            <div class="form-group">
+              <label for="orderOccasion"><i class="ri-calendar-event-line"></i> المناسبة:</label>
+              <select id="orderOccasion">
+                <option value="أعياد الميلاد">عيد ميلاد</option>
+                <option value="الأفراح والخطوبة">زفاف / فرح / خطوبة</option>
+                <option value="التخرج والنجاح">تخرج / نجاح</option>
+                <option value="الإهداءات والمفاجآت">إهداء ومفاجأة</option>
+                <option value="المناسبات الخاصة">مناسبة خاصة أخرى</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="voicePreference"><i class="ri-mic-2-line"></i> تفضيل الصوت:</label>
+              <select id="voicePreference">
+                <option value="صوت رجالي">صوت رجالي</option>
+                <option value="صوت نسائي">صوت نسائي</option>
+                <option value="دويتو (رجالي + نسائي)">دويتو (رجالي + نسائي)</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="orderNotes"><i class="ri-draft-line"></i> فكرة الأغنية أو تفاصيل الكلمات:</label>
+              <textarea id="orderNotes" rows="4" placeholder="اكتب التفاصيل التي تحب ذكرها في الكلمات (صفات الشخص، أمنيته، تاريخ مميز...)"></textarea>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 30px;">
+            <button type="submit" class="btn-whatsapp">
+              <i class="ri-whatsapp-fill" style="font-size: 24px;"></i> إرسال الطلب فوراً عبر الواتساب
+            </button>
+          </div>
+        </form>
+
+        <div class="highlight-banner">
+          <i class="ri-gift-fill" style="font-size: 26px;"></i>
+          <span>خلّي المناسبة بصوتك... وباسمك 🎁 هدية مختلفة تبقى في القلب</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Bottom Audio Player -->
+  <div id="stickyPlayer" class="sticky-player">
+    <div class="container player-container">
+      <div class="player-track-info">
+        <img id="playerThumb" src="assets/images/song_cover.jpg" alt="Track Cover" class="player-thumb">
+        <div class="player-track-text">
+          <h5 id="playerTrackTitle">اختر أغنية للاستماع</h5>
+          <p id="playerTrackRecipient">الفنان سامح نبيل</p>
+        </div>
+      </div>
+
+      <div class="player-controls-wrapper">
+        <div class="player-buttons">
+          <button id="prevBtn" class="control-btn" aria-label="Previous"><i class="ri-skip-back-line"></i></button>
+          <button id="mainPlayBtn" class="control-btn play-main" aria-label="Play/Pause"><i class="ri-play-fill"></i></button>
+          <button id="nextBtn" class="control-btn" aria-label="Next"><i class="ri-skip-forward-line"></i></button>
+        </div>
+
+        <div class="progress-bar-container">
+          <span id="currentTime" class="time-text">00:00</span>
+          <div id="progressBar" class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <span id="totalDuration" class="time-text">00:00</span>
+        </div>
+      </div>
+
+      <div>
+        <a href="#orderSection" class="btn-primary" style="padding: 8px 18px; font-size: 14px;">
+          <i class="ri-whatsapp-line"></i> اطلب الآن
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer & Contact Details -->
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>تصميم الأغاني بالاسم | الفنان سامح نبيل</h4>
+        <p>نصنع لك ولكل من تحب أغنية خاصة حصرية تبقى ذكرى خالدة على مر السنين بأعلى جودة استوديو وتوزيع موسقي محترف.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/19UDn6MZL2/" target="_blank" class="social-btn" aria-label="Facebook" title="Facebook"><i class="ri-facebook-fill"></i></a>
+          <a href="https://www.tiktok.com/@sameh.nabil574?_r=1&_t=ZS-98zn0jvOR40" target="_blank" class="social-btn" aria-label="TikTok" title="TikTok"><i class="ri-tiktok-fill"></i></a>
+          <a href="https://samehnabilebrhaim12-ops.github.io/portfolio/" target="_blank" class="social-btn" aria-label="Portfolio" title="البروفايل الشخصي"><i class="ri-global-line"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size: 18px; margin-bottom: 15px;">روابط سريعة</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px;">
+          <li><a href="#hero" style="color: var(--text-muted); text-decoration: none;">الرئيسية</a></li>
+          <li><a href="#occasions" style="color: var(--text-muted); text-decoration: none;">المناسبات</a></li>
+          <li><a href="#showcase" style="color: var(--text-muted); text-decoration: none;">نماذج الأعمال</a></li>
+          <li><a href="#orderSection" style="color: var(--text-muted); text-decoration: none;">اطلب أغنيتك</a></li>
+          <li><a href="https://samehnabilebrhaim12-ops.github.io/portfolio/" target="_blank" style="color: var(--accent-pink); text-decoration: none;"><i class="ri-external-link-line"></i> البروفايل التعريفي</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 18px; margin-bottom: 15px;">بيانات التواصل المباشر</h4>
+        <a href="https://wa.me/201271809591" target="_blank" class="contact-item">
+          <i class="ri-whatsapp-line"></i> 01271809591
+        </a>
+        <a href="tel:01271809591" class="contact-item">
+          <i class="ri-phone-line"></i> 01271809591
+        </a>
+        <a href="mailto:samehnabilebrhaim12@gmail.com" class="contact-item">
+          <i class="ri-mail-line"></i> samehnabilebrhaim12@gmail.com
+        </a>
+        <a href="https://samehnabilebrhaim12-ops.github.io/portfolio/" target="_blank" class="contact-item">
+          <i class="ri-user-star-line"></i> معرض الأعمال والبروفايل
+        </a>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <p>جميع الحقوق محفوظة &copy; 2026 - موقع تصميم الأغاني بالاسم (الفنان سامح نبيل)</p>
+    </div>
+  </footer>
+
+  <!-- Javascript Scripts -->
+  <script src="js/songs-data.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
