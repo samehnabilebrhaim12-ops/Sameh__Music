@@ -15,7 +15,7 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   
   <!-- Custom Stylesheet (with cache-buster for mobile instant update) -->
-  <link rel="stylesheet" href="css/style.css?v=2.1">
+  <link rel="stylesheet" href="css/style.css?v=2.4">
 
   <!-- Critical Mobile Rules (Instant rendering on mobile browsers) -->
   <style>
@@ -416,14 +416,16 @@
 
       <div class="player-controls-wrapper">
         <div class="player-buttons">
-          <button id="prevBtn" class="control-btn" aria-label="Previous"><i class="ri-skip-back-line"></i></button>
-          <button id="mainPlayBtn" class="control-btn play-main" aria-label="Play/Pause"><i class="ri-play-fill"></i></button>
-          <button id="nextBtn" class="control-btn" aria-label="Next"><i class="ri-skip-forward-line"></i></button>
+          <button id="prevBtn" class="control-btn" aria-label="Previous" title="الأغنية السابقة"><i class="ri-skip-back-line"></i></button>
+          <button id="rewindBtn" class="control-btn skip-sec-btn" aria-label="Rewind 10s" title="تأخير 10 ثواني"><i class="ri-replay-10-line"></i></button>
+          <button id="mainPlayBtn" class="control-btn play-main" aria-label="Play/Pause" title="تشغيل / إيقاف"><i class="ri-play-fill"></i></button>
+          <button id="forwardBtn" class="control-btn skip-sec-btn" aria-label="Forward 10s" title="تقديم 10 ثواني"><i class="ri-forward-10-line"></i></button>
+          <button id="nextBtn" class="control-btn" aria-label="Next" title="الأغنية التالية"><i class="ri-skip-forward-line"></i></button>
         </div>
 
         <div class="progress-bar-container">
           <span id="currentTime" class="time-text">00:00</span>
-          <div id="progressBar" class="progress-bar">
+          <div id="progressBar" class="progress-bar" title="انقر أو اسحب للتقديم والتأخير">
             <div id="progressFill" class="progress-fill"></div>
           </div>
           <span id="totalDuration" class="time-text">00:00</span>
@@ -493,8 +495,8 @@
   </a>
 
   <!-- Javascript Scripts -->
-  <script src="js/songs-data.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/songs-data.js?v=2.2"></script>
+  <script src="js/main.js?v=2.2"></script>
 
 </body>
 </html>

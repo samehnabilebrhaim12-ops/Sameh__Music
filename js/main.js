@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainPlayIcon = mainPlayBtn ? mainPlayBtn.querySelector('i') : null;
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
+  const rewindBtn = document.getElementById('rewindBtn');
+  const forwardBtn = document.getElementById('forwardBtn');
   const playerThumb = document.getElementById('playerThumb');
   const playerTrackTitle = document.getElementById('playerTrackTitle');
   const playerTrackRecipient = document.getElementById('playerTrackRecipient');
@@ -247,11 +249,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // أزرار التقديم والتأخير السريع بمقدار 10 ثواني
+  if (forwardBtn) {
+    forwardBtn.addEventListener('click', () => {
+      if (isFinite(audioPlayer.duration) && audioPlayer.duration > 0) {
+        audioPlayer.currentTime = Math.min(audioPlayer.duration, audioPlayer.currentTime + 10);
+      }
+    });
+  }
+
+  if (rewindBtn) {
+    rewindBtn.addEventListener('click', () => {
+      if (isFinite(audioPlayer.duration) && audioPlayer.duration > 0) {
+        audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - 10);
+      }
+    });
+  }
+
   // تحديث شريط التقدم والوقت
+  let isDraggingProgress = false;
+
+  audioPlayer.addEventListener('loadedmetadata', () => {
+    if (totalDurationEl && isFinite(audioPlayer.duration) && audioPlayer.duration > 0) {
+      totalDurationEl.textContent = formatTime(audioPlayer.duration);
+    }
+  });
+
   audioPlayer.addEventListener('timeupdate', () => {
-    if (!isNaN(audioPlayer.duration) && audioPlayer.duration > 0) {
+    if (!isDraggingProgress && isFinite(audioPlayer.duration) && audioPlayer.duration > 0) {
       const pct = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-      if (progressFill) progressFill.style.width = `${pct}%`;
+      if (progressFill) progressFill.style.width = `${Math.min(100, Math.max(0, pct))}%`;
       if (currentTimeEl) currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
       if (totalDurationEl) totalDurationEl.textContent = formatTime(audioPlayer.duration);
     }
@@ -261,14 +288,71 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nextBtn) nextBtn.click();
   });
 
+  function getSeekPctFromEvent(e) {
+    if (!progressBar) return 0;
+    const rect = progressBar.getBoundingClientRect();
+    const clientX = e.touches && e.touches.length > 0 ? e.touches[0].clientX : e.clientX;
+    const clickX = clientX - rect.left;
+    return Math.max(0, Math.min(1, clickX / rect.width));
+  }
+
+  function applySeek(pct) {
+    if (!isFinite(audioPlayer.duration) || audioPlayer.duration <= 0) return;
+    const targetTime = pct * audioPlayer.duration;
+    audioPlayer.currentTime = targetTime;
+    if (progressFill) progressFill.style.width = `${pct * 100}%`;
+    if (currentTimeEl) currentTimeEl.textContent = formatTime(targetTime);
+  }
+
+  function updateVisualSeek(pct) {
+    if (progressFill) progressFill.style.width = `${pct * 100}%`;
+    if (currentTimeEl && isFinite(audioPlayer.duration) && audioPlayer.duration > 0) {
+      currentTimeEl.textContent = formatTime(pct * audioPlayer.duration);
+    }
+  }
+
   if (progressBar) {
-    progressBar.addEventListener('click', (e) => {
-      const rect = progressBar.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      const width = rect.width;
-      const duration = audioPlayer.duration;
-      if (duration) {
-        audioPlayer.currentTime = (clickX / width) * duration;
+    // دعم النقر والسحب بالماوس (Desktop)
+    progressBar.addEventListener('mousedown', (e) => {
+      isDraggingProgress = true;
+      progressBar.classList.add('dragging');
+      const pct = getSeekPctFromEvent(e);
+      applySeek(pct);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDraggingProgress) return;
+      const pct = getSeekPctFromEvent(e);
+      updateVisualSeek(pct);
+    });
+
+    window.addEventListener('mouseup', (e) => {
+      if (isDraggingProgress) {
+        const pct = getSeekPctFromEvent(e);
+        applySeek(pct);
+        isDraggingProgress = false;
+        progressBar.classList.remove('dragging');
+      }
+    });
+
+    // دعم النقر والسحب باللمس (Mobile Touch)
+    progressBar.addEventListener('touchstart', (e) => {
+      isDraggingProgress = true;
+      progressBar.classList.add('dragging');
+      const pct = getSeekPctFromEvent(e);
+      applySeek(pct);
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isDraggingProgress) return;
+      const pct = getSeekPctFromEvent(e);
+      updateVisualSeek(pct);
+    }, { passive: true });
+
+    window.addEventListener('touchend', (e) => {
+      if (isDraggingProgress) {
+        isDraggingProgress = false;
+        progressBar.classList.remove('dragging');
       }
     });
   }
