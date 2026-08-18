@@ -15,7 +15,22 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   
   <!-- Custom Stylesheet (with cache-buster for mobile instant update) -->
-  <link rel="stylesheet" href="css/style.css?v=2.0">
+  <link rel="stylesheet" href="css/style.css?v=2.1">
+
+  <!-- Critical Mobile Rules (Instant rendering on mobile browsers) -->
+  <style>
+    @media (max-width: 992px) {
+      .navbar { padding: 10px 0 !important; }
+      .nav-container { display: flex !important; justify-content: space-between !important; align-items: center !important; width: 100% !important; position: relative !important; }
+      .brand-logo { display: inline-flex !important; align-items: center !important; gap: 8px !important; flex-shrink: 0 !important; white-space: nowrap !important; }
+      .brand-logo .brand-text { font-size: 15px !important; white-space: nowrap !important; display: inline-flex !important; align-items: center !important; gap: 4px !important; }
+      .brand-logo .logo-icon { width: 36px !important; height: 36px !important; font-size: 18px !important; flex-shrink: 0 !important; }
+      .nav-links { display: none !important; position: absolute !important; top: calc(100% + 10px) !important; left: 10px !important; right: 10px !important; background: rgba(13, 9, 28, 0.98) !important; backdrop-filter: blur(25px) !important; -webkit-backdrop-filter: blur(25px) !important; flex-direction: column !important; padding: 20px !important; gap: 12px !important; border-radius: 14px !important; border: 1px solid rgba(255, 42, 133, 0.4) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.8) !important; z-index: 1001 !important; }
+      .nav-links.nav-active { display: flex !important; }
+      .nav-cta-btn { display: none !important; }
+      .mobile-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 40px !important; height: 40px !important; border-radius: 8px !important; background: rgba(255, 255, 255, 0.08) !important; border: 1px solid rgba(255, 255, 255, 0.15) !important; color: #fff !important; font-size: 22px !important; cursor: pointer !important; }
+    }
+  </style>
 </head>
 <body>
 
