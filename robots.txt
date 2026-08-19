@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap URL
+Sitemap: https://samehnabilebrhaim12-ops.github.io/Sameh__Music/sitemap.xml
