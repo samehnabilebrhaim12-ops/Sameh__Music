@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap URL
-Sitemap: https://samehnabil-music.vercel.app/sitemap.xml
+Sitemap: https://sameh-music.web.app/sitemap.xml
