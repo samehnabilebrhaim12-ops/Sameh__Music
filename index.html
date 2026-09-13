@@ -7,6 +7,9 @@
   <meta name="description" content="موقع تصميم الأغاني بالاسم للفنان سامح نبيل - أغنية خاصة بك بكلمات من اختيارك وألحان تُعبر عن إحساسك لمختلف المناسبات، أعياد الميلاد، الأفراح، والنجاح.">
   <meta name="keywords" content="سامح نبيل, Sameh Nabil, تصميم اغاني بالاسم, اغنية بالاسم, اغاني اعياد ميلاد بالاسم, اغاني افراح خاصة, الحان وتوزيع, اغاني بالاسماء, استوديو اغاني, عمل اغنية خاصة">
   <meta name="author" content="الفنان سامح نبيل - Sameh Nabil">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="google-site-verification" content="google5d800bf533a726aa.html">
   <link rel="canonical" href="https://sameh-music.web.app/">
 
@@ -33,12 +36,14 @@
     "@graph": [
       {
         "@type": "WebSite",
+        "@id": "https://sameh-music.web.app/#website",
         "name": "الفنان سامح نبيل",
         "alternateName": ["Sameh Nabil Music", "Sameh Nabil", "تصميم الأغاني بالاسم"],
         "url": "https://sameh-music.web.app/"
       },
       {
         "@type": "Person",
+        "@id": "https://sameh-music.web.app/#person",
         "name": "سامح نبيل",
         "alternateName": "Sameh Nabil",
         "jobTitle": "فنان وموزع موسيقي ومصمم أغاني بالاسم",
@@ -53,6 +58,36 @@
         "email": "samehnabilebrhaim12@gmail.com",
         "description": "تصميم الأغاني بالاسم بكلمات حصرية وألحان وتوزيع موسيقي مميز لمختلف المناسبات والأفراح وأعياد الميلاد.",
         "knowsAbout": ["تصميم الأغاني", "التوزيع الموسيقي", "الغناء", "الإنتاج الفني"]
+      },
+      {
+        "@type": "Service",
+        "serviceType": "تصميم وإنتاج الأغاني بالاسم والمناسبات",
+        "provider": {
+          "@id": "https://sameh-music.web.app/#person"
+        },
+        "areaServed": "Worldwide",
+        "description": "خدمة كتابة وتلحين وتوزيع وتسجيل أغاني خاصة بالأسماء لجميع المناسبات (أعياد ميلاد، أفراح، تخرج، هدايا خاصة)."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "كيف يمكنني طلب أغنية خاصة بالاسم؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "يمكنك اختيار المناسبة والاسم وتفاصيل الأغنية عبر الموقع والتواصل مباشرة عبر واتساب مع الفنان سامح نبيل لبدء التنفيذ فوراً."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "كم يستغرق تجهيز الأغنية؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "يتم تجهيز وتسجيل الأغنية بأعلى جودة استوديو وتسليمها في وقت قياسي يتراوح بين 24 إلى 48 ساعة."
+            }
+          }
+        ]
       }
     ]
   }
