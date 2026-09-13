@@ -428,6 +428,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --------------------------------------------------------------------------
+  // تبديل وضع الألوان (Dark / Light Theme Switcher) مع الحفظ في المتصفح
+  // --------------------------------------------------------------------------
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const savedTheme = localStorage.getItem('site_theme');
+
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      localStorage.setItem('site_theme', isLight ? 'light' : 'dark');
+    });
+  }
+
   // تهيئة العرض الأولية
   renderSongs('all');
 });
